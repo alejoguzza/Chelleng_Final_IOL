@@ -1,21 +1,20 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 
 namespace CodingChallenge.Data.Classes
 {
     public class Triangulo : Figura
     {
-        public Triangulo()
+        public Triangulo(Idiomas Culture)
         {
-            _STituloCastellano = "Triángulo";
-            _PTituloCastellano = "Triángulos";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo((int)Culture);
 
-            _STituloIngles = "Triangle";
-            _PTituloIngles = "Triangles";
-
-            _STituloItaliano = "Triangolo";
-            _PTituloItaliano = "Triangolos";
 
             _TipoFigura = Figuras.TrianguloEquilatero;
+
+            STitulo = Labes.Triangulo;
+            PTitulo = Labes.Triangulos;
         }
 
         

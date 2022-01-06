@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CodingChallenge.Data.Classes
@@ -9,18 +11,16 @@ namespace CodingChallenge.Data.Classes
     public class Rectangulo : Figura
     {
 
-        public Rectangulo()
+        public Rectangulo(Idiomas Culture)
         {
-            _STituloCastellano = "Rectangulo";
-            _PTituloCastellano = "Rectangulos";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo((int)Culture);
+            
 
-            _STituloIngles = "Rectangle";
-            _PTituloIngles = "Rectangles";
-
-            _STituloItaliano = "Rectangolo";
-            _PTituloItaliano = "Rectangolos";
 
             _TipoFigura = Figuras.Rectangulo;
+
+            STitulo = Labes.Rectengulo;
+            PTitulo = Labes.Rectangulos;
         }
 
         

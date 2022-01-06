@@ -1,21 +1,18 @@
 ﻿using System;
+using System.Globalization;
+using System.Threading;
 
 namespace CodingChallenge.Data.Classes
 {
    public class Circulo : Figura
     {
-        public Circulo()
+        public Circulo(Idiomas Culture)
         {
-            _STituloCastellano = "Círculo";
-            _PTituloCastellano = "Círculos";
-
-            _STituloIngles = "Circle";
-            _PTituloIngles = "Circles";
-
-            _STituloItaliano = "Cerchio";
-            _PTituloItaliano = "Cerchios";
-
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo((int)Culture);
             _TipoFigura = Figuras.Circulo;
+
+            STitulo = Labes.Circulo;
+            PTitulo = Labes.Circulos;
         }
 
         

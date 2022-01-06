@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using CodingChallenge.Data.Classes;
 
@@ -12,51 +14,39 @@ namespace ReporteFigurasConsola
     {
         static void Main(string[] args)
         {
-            List<Figura> lstFig = GetFiguras();
-            Console.WriteLine("CASTELLANO");
-            ReporteCastellano r = new ReporteCastellano();
-            var s= r.Imprimir(lstFig);
-            Console.WriteLine(s);
+            var Cultura = Idiomas.Castellano;
+            List<Figura> lstFig = GetFiguras(Cultura);
 
-            Console.WriteLine("INGLES");
-            ReporteIngles i = new ReporteIngles();
-            var ri = i.Imprimir(lstFig);
+            var res = ReporteMultiIdioma.Imprimir(lstFig, Cultura);
+            Console.WriteLine(res);
 
-            Console.WriteLine(ri);
 
-            Console.WriteLine("ITALIANO");
-            ReporteItaliano it = new ReporteItaliano();
-            var t = it.Imprimir(lstFig);
-
-            Console.WriteLine(t);
-            
-            ReporteItaliano itv = new ReporteItaliano();
-            var tv = it.Imprimir(new List<Figura>());
-            Console.WriteLine(tv);
-
+            var re2 = ReporteMultiIdioma.Imprimir(new List<Figura>(), Cultura);
+            Console.WriteLine(re2);
 
             Console.ReadLine();
             
         }
 
-       static List<Figura> GetFiguras()
+       static List<Figura> GetFiguras(Idiomas Cultura)
         {
+            
             List<Figura> lstFig = new List<Figura>();
             for (int i = 0; i < 5; i++)
             {
-                var o = new Cuadrado { _lado = i };
+                var o = new Cuadrado(Cultura) { _lado = i };
                 lstFig.Add(o);
 
-                var c = new Circulo { _lado=i };
+                var c = new Circulo (Cultura) { _lado=i };
                 lstFig.Add(c);
 
-                var t = new Triangulo { _lado = i, _lado2 =i, _ladoA = i };
+                var t = new Triangulo(Cultura) { _lado = i, _lado2 =i, _ladoA = i };
                 lstFig.Add(t);
 
-                var tr = new Trapecio { _lado = i+2, _lado2 = i, _ladoA = i+3 };
+                var tr = new Trapecio(Cultura) { _lado = i+2, _lado2 = i, _ladoA = i+3 };
                 lstFig.Add(tr);
 
-                var r = new Rectangulo { _lado = i + 2, _base=i+3 };
+                var r = new Rectangulo(Cultura) { _lado = i + 2, _base=i+3 };
                 lstFig.Add(r);
 
                

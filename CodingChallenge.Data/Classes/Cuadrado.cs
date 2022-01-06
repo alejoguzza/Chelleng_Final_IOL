@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CodingChallenge.Data.Classes
@@ -9,18 +11,15 @@ namespace CodingChallenge.Data.Classes
 
     public class Cuadrado : Figura
     {
-        public Cuadrado()
+        public Cuadrado(Idiomas Culture)
         {
-            _STituloCastellano = "Cuadrado";
-            _PTituloCastellano = "Cuadrados";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo((int)Culture);
 
-            _STituloIngles = "Square";
-            _PTituloIngles = "Squares";
-
-            _STituloItaliano = "Quadrato";
-            _PTituloItaliano = "Quadratos";
 
             _TipoFigura = Figuras.Cuadrado;
+
+            STitulo = Labes.Cuadrado;
+            PTitulo = Labes.Cuadrados;
         }
 
         public override decimal CalcularArea()

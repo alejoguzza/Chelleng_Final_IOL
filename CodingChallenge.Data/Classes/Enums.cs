@@ -8,9 +8,9 @@ namespace CodingChallenge.Data.Classes
 {
     public enum Idiomas 
     {
-        Castellano = 1,
-        Ingles = 2,
-        Italiano = 3
+        Castellano = 3082,
+        Ingles = 1033,
+        Italiano = 1040
     }
 
    public enum Figuras

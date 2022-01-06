@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace CodingChallenge.Data.Classes
@@ -9,18 +11,14 @@ namespace CodingChallenge.Data.Classes
     public class Trapecio : Figura
     {
 
-        public Trapecio()
+        public Trapecio(Idiomas Culture)
         {
-            _STituloCastellano = "Trapecio";
-            _PTituloCastellano = "Trapecios";
-
-            _STituloIngles = "Trapeze";
-            _PTituloIngles = "Trapezes";
-
-            _STituloItaliano = "Trapezio";
-            _PTituloItaliano = "Trapezios";
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo((int)Culture);
 
             _TipoFigura = Figuras.Trapecio;
+
+            STitulo = Labes.Trapecio;
+            PTitulo = Labes.Trapecios;
         }
 
         

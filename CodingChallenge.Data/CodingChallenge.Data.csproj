@@ -44,6 +44,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,18 +53,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Labes.es-ES.Designer.cs">
+      <DependentUpon>Labes.es-ES.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Labes.en-US.Designer.cs">
+      <DependentUpon>Labes.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Labes.it-IT.Designer.cs">
+      <DependentUpon>Labes.it-IT.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Labes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Labes.resx</DependentUpon>
+    </Compile>
     <Compile Include="Classes\Circulo.cs" />
     <Compile Include="Classes\Cuadrado.cs" />
     <Compile Include="Classes\Enums.cs" />
     <Compile Include="Classes\Figura.cs" />
     <Compile Include="Classes\FormaGeometrica.cs" />
     <Compile Include="Classes\IFigura.cs" />
-    <Compile Include="Classes\IReporte.cs" />
-    <Compile Include="Classes\Reporte.cs" />
-    <Compile Include="Classes\ReporteItaliano.cs" />
-    <Compile Include="Classes\ReporteIngles.cs" />
-    <Compile Include="Classes\ReporteCastellano.cs" />
     <Compile Include="Classes\Rectangulo.cs" />
+    <Compile Include="Classes\ReporteMultiIdioma.cs" />
     <Compile Include="Classes\Trapecio.cs" />
     <Compile Include="Classes\Triangulo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,7 +88,24 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Labes.es-ES.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Labes.es-ES.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Labes.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Labes.en-US.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Labes.it-IT.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Labes.it-IT.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Labes.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Labes.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
